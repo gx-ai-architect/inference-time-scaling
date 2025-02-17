@@ -243,4 +243,15 @@ if __name__ == "__main__":
                         interval=100, blit=True, repeat=False)
     
     plt.tight_layout()
-    plt.show() 
+    
+    # Import HTML display module from IPython
+    from IPython.display import HTML
+    
+    # Convert animation to HTML5 video
+    html_animation = HTML(anim.to_jshtml())
+    
+    # Display the animation
+    display(html_animation)
+    
+    # Close the figure to free up memory
+    plt.close()
